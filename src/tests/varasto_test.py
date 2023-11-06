@@ -53,15 +53,15 @@ class TestVarasto(unittest.TestCase):
     def test_ota_varastosta_negatiivinen_maara(self):
         self.assertEqual(self.varasto.ota_varastosta(-5), 0.0)
 
-    def test_uudella_varastolla_liian_pieni_saldo(self):
+    def test_uudella_varastolla_on_liian_pieni_saldo(self):
         self.varasto = Varasto(10, -1)
         self.assertEqual(self.varasto.saldo, 0.0)
 
-    def test_uudelle_varaston_tilavuus_on_negatiivinen(self):
+    def test_uuden_varaston_tilavuus_on_negatiivinen(self):
         self.varasto = Varasto(-1)
         self.assertEqual(self.varasto.tilavuus, 0.0)
 
-    def test_uudelle_varaston_saldo_on_tilavuutta_suurempi(self):
+    def test_uuden_varaston_saldo_on_tilavuutta_suurempi(self):
         self.varasto = Varasto(5, 10)
         self.assertEqual(self.varasto.saldo, 5)
     
